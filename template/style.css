@@ -1,0 +1,105 @@
+.popular-songs {
+  /*background-color: #212121;*/
+  background: rgb(25, 25, 25);
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.spfy-btn {
+  background: transparent;
+  border-radius: 500px;
+  color: #fff;
+  font-size: 11px;
+  line-height: 11px;
+  margin: 0;
+  min-width: 92px;
+  padding: 8px 25px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  margin-right: 10px;
+  float: left;
+  border: 0.5px solid #b3b3b3;
+  margin-top: 2rem;
+}
+
+.spfy-btn:hover {
+  transform:scale(1.1,1.1);
+  -webkit-transform:scale(1.1,1.1);
+  -moz-transform:scale(1.1,1.1);
+  border: 1.4px solid white;
+}
+
+.song {
+  /*vertical-align: middle;*/
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.plus {
+  font-size: 200%;
+  font-weight: 100;
+  color: #b3b3b3;
+}
+
+#play {
+  font-size: 150%;
+  font-weight: 100;
+  color:white;
+}
+
+#number {
+  vertical-align: middle;
+  color: #b3b3b3
+}
+
+.more {
+  font-size: 150%;
+  font-weight: 100;
+  color:#b3b3b3;
+}
+
+
+/* HOVER EFFECTS */
+.song:hover {
+  /*background-color:#3a3a3a; this color when clicked*/
+  background-color:#323232;
+}
+
+.song:hover .plus{
+  color:white;
+}
+
+.song:hover .more{
+  color:white;
+}
+
+#play:hover {
+  transform:scale(1.1,1.1);
+  -webkit-transform:scale(1.1,1.1);
+  -moz-transform:scale(1.1,1.1);
+}
+
+/* Popover Styling */
+.popover .arrow {
+  visibility:hidden;
+}
+
+.popover-body {
+ background-color: #323232;
+ border-radius:3px;
+}
+
+.popover-body td{
+  color: #b3b3b3;
+}
+
+.popover-body tr>td{
+  padding-bottom: 1em;
+}
+
+
+
+
+

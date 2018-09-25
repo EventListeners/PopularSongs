@@ -1,0 +1,67 @@
+{
+  "name": "spotify",
+  "description": "> Project description",
+  "author": "Andrew MacDonald",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "clear": "jest --clearCache",
+    "start": "node server/index.js",
+    "react-dev": "webpack -d --watch",
+    "seed": "node database/seeding_script.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-brands-svg-icons": "^5.3.1",
+    "@fortawesome/free-regular-svg-icons": "^5.3.1",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "css-loader": "^1.0.0",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.2.13",
+    "popper.js": "^1.14.4",
+    "rc-dropdown": "^2.2.0",
+    "rc-menu": "^7.4.8",
+    "react": "^15.4.2",
+    "react-css-modules": "^4.7.7",
+    "react-dom": "^15.4.2",
+    "reactstrap": "^6.4.0",
+    "style-loader": "^0.23.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-15": "^1.1.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "faker": "^4.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "jest-enzyme": "^6.0.4",
+    "webpack": "^2.2.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DotThen/PopularSongs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DotThen/PopularSongs/issues"
+  },
+  "homepage": "https://github.com/DotThen/PopularSongs#readme"
+}

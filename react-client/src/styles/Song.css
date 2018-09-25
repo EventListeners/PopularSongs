@@ -1,0 +1,141 @@
+
+  :local(.song) {
+    /*vertical-align: middle;*/
+    display: flex;
+    align-items: center;
+    /*margin-bottom: 0.4rem;*/
+    margin-bottom: 0px;
+    border: 1px solid rgba(73, 73, 73, 0.288);
+    border-left: none;
+    border-right: none;
+  }
+  
+  :local(.plus) {
+    font-size: 50px;
+    font-weight: 100;
+    color: #b3b3b3;
+    padding-left: 0px;
+  }
+  
+  :local(#play) {
+    font-size: 150%;
+    font-weight: 100;
+    color:white;
+    margin-left: 15px;
+  }
+  
+  :local(#number) {
+    vertical-align: middle;
+    color: #b3b3b3;
+    margin-left: 20px;
+  }
+  
+  :local(.more) {
+    font-size: 150%;
+    font-weight: 100;
+    color:#b3b3b3;
+  }
+
+  :local(.test) {
+    display: none;
+  }
+  
+  
+  /* HOVER EFFECTS */
+  :local(.song:hover) {
+    /*background-color:#3a3a3a; this color when clicked*/
+    background-color:#323232;
+  }
+  
+  :local(.song:hover .plus){
+    color:white;
+  }
+  
+  :local(.song:hover .more){
+    color:white;
+  }
+
+  :local(.song:hover .test){
+    display: inline;
+  }
+  
+  :local(#play:hover) {
+    transform:scale(1.1,1.1);
+    -webkit-transform:scale(1.1,1.1);
+    -moz-transform:scale(1.1,1.1);
+  }
+  
+  /* Popover Styling */
+  
+  /* :local(.popover .arrow) {
+    visibility:hidden;
+  }
+  
+  :local(.popover-body) {
+   background-color: #323232;
+   border-radius:3px;
+  }
+  
+  :local(.popover-body td){
+    color: #b3b3b3;
+  }
+  
+  :local(.popover-body tr>td){
+    padding-bottom: 1em;
+  } */
+
+  
+
+  :local(.song-number-play) {
+   /* padding-left: 0px; 
+    padding-right: 0px; 
+    margin-right: 0px;
+    width: 0.1em;*/
+  }
+
+  :local(.song-name) {
+
+  }
+
+  :local(.song-is-playing) {
+    color: rgb(29, 185, 84);
+  }
+
+  :local(.streams) {
+    
+  }
+
+  :local(.more-options) {
+    background-color: #282828 !important;
+    color: #b3b3b3;
+    font-family: 'Open Sans', sans-serif !important;
+  }
+
+  :local(.more-op) {
+    color: #b3b3b3;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+  :local(.more-op:hover) {
+    background-color: #404040 !important;
+    color: white;
+  }
+
+  :local(.line) {
+    border-top: 1px solid #b3b3b3;
+    margin:0 !important;
+  }
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  

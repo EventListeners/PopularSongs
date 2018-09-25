@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Popular Songs</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid popular-songs">
+        <div class="row"> 
+            <div class="col"> 
+                <h3 class="text-center">Popular</h1>
+            </div> 
+        </div>
+
+        <!--One Song-->
+        <div class="row song">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-1">
+                <img src="https://loremflickr.com/320/320/musician,hollywood,artist,singer/all" alt="artist album cover" width="50">
+            </div>
+            <div class="song-number-play col col-lg-1">
+                <!--<div id="number">1</div>-->
+                <ion-icon id="play" name="ios-play"></ion-icon>
+            </div>
+            <div class="col col-lg-1">
+                <ion-icon class="plus" name="ios-add"></ion-icon>
+            </div>
+            <div class="col col-lg-4">song name</div>
+            <div class="col col-lg-1">
+                <ion-icon class="more" name="ios-more"></ion-icon>
+            </div>
+            <div class="col col-lg-2">135,116,829</div>
+            <div class="col col-lg-1"></div>
+        </div>
+
+         <!--One Song-->
+         <div class="row song">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-1">
+                <img src="https://loremflickr.com/320/320/musician,hollywood,artist,singer/all" alt="artist album cover" width="50">
+            </div>
+            <div class="song-number-play col col-lg-1">
+                <!--<div id="number">1</div>-->
+                <ion-icon id="play" name="ios-play"></ion-icon>
+            </div>
+            <div class="col col-lg-1">
+                    <ion-icon class="plus" name="ios-add"></ion-icon>
+            </div>
+            <div class="col col-lg-4">song name</div>
+            <div class="col col-lg-1">
+                <ion-icon class="more" name="ios-more"></ion-icon>
+            </div>
+            <div class="col col-lg-2">135,116,829</div>
+            <div class="col col-lg-1"></div>
+        </div>
+
+        <!--One Song-->
+        <div class="row song">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-1">
+                <img src="https://loremflickr.com/320/320/musician,hollywood,artist,singer/all" alt="artist album cover" width="50">
+            </div>
+            <div class="song-number-play col col-lg-1">
+                <!--<div id="number">1</div>-->
+                <ion-icon id="play" name="ios-play"></ion-icon>
+            </div>
+            <div class="col col-lg-1">
+                <ion-icon class="plus" name="ios-add"></ion-icon>
+            </div>
+            <div class="col col-lg-4">song name</div>
+            <div class="col col-lg-1">
+                <ion-icon class="more" name="ios-more"></ion-icon>
+            </div>
+            <div class="col col-lg-2">135,116,829</div>
+            <div class="col col-lg-1"></div>
+        </div>
+
+       
+        
+        <div class="row">
+            <div class="col col-lg-1"></div>
+            <div class="col">
+                <button class="spfy-btn mt-5" type="button">SHOW 5 MORE</button>
+            </div>
+            <div class="col col-lg-1"></div>
+        </div>
+
+        <!----------------- Popover ------------------->
+        <div id="more-options" style="display: none">
+            <table>
+                <tr><td>Add to Queue</td></tr>
+                <tr><td>Go to Song Radio</td></tr>
+                <tr><td>Go to Artist</td></tr>
+                <tr><td>Go to Album</td></tr>
+                <tr><td>Show Credits</td></tr>
+                <tr><td>Save to Your Library</td></tr>
+                <tr><td>Add to Playlist</td></tr>
+                <tr><td>Share</td></tr>
+            </table>
+        </div>
+        
+        
+    </div>
+    
+    <script src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+    <script>
+        $('[data-toggle="popover"]').popover()
+
+        $(document).ready(function(){
+
+            $('.more').popover({
+                html : true, 
+                content: function() {
+                    return $('#more-options').html();
+                } 
+            }); 
+            
+            //$('td').css('color', 'white');
+
+        });
+    </script>
+</body>
+</html>
+
+
+

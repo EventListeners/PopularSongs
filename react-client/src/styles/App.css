@@ -1,0 +1,44 @@
+:local(.popular-songs) {
+  background: rgb(25, 25, 25);
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  padding-left: 250px;
+  margin-right: 50px;
+  padding-bottom: 30px;
+}
+
+:local(.spfy-btn) {
+  background: transparent;
+  border-radius: 500px;
+  color: #fff;
+  font-size: 11px;
+  line-height: 11px;
+  margin: 25px;
+  min-width: 92px;
+  padding: 8px 25px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  margin-right: 10px;
+  float: left;
+  border: 0.5px solid #b3b3b3;
+  margin-top: 2rem;
+}
+
+:local(.spfy-btn:hover) {
+  transform:scale(1.1,1.1);
+  -webkit-transform:scale(1.1,1.1);
+  -moz-transform:scale(1.1,1.1);
+  border: 1.4px solid white;
+}
+
+:local(.spfy-btn:focus) {
+  outline: 0;
+}
+
+:local(.popular-title) {
+  font-weight: 700;
+  font-size:  14pt;
+}
+  

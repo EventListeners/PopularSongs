@@ -2,18 +2,18 @@
 
 
 ##Create
-Endpoint: artist/
+Endpoint: artists/
 This endpoint will add an object when supplied with the correct data
 
 
 ##Read
-Endpoint: artist/:id
+Endpoint: artists/:id
 This endpoint will read the :id and output the data at this location
 
 ##Update
-Endpoint: artist/:id/update
+Endpoint: artists/:id/update
 When supplied with the a full object, this will replace the data at the specified location
 
 ##Delete
-Endpoint: artist/:id/delete
+Endpoint: artists/:id/delete
 Will delete the artist with this id

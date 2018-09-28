@@ -36,6 +36,13 @@ app.post('/artist/update', function (req, res) {
 });
 
 
+app.delete('/artist/:id/delete', function (req, res) {
+  Artist.deleteOne({name: artistName}, function(err) {
+    console.log(error, "error in deleting DB data")
+  });
+})
+
+
 const PORT = 3003;
 
 app.listen(PORT, function() {

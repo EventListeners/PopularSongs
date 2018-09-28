@@ -4,7 +4,7 @@ const Artist = require('./index');
 
 // 100 artists - 3 albums - 10 songs
 
-for (var i = 1; i <= 100; i++) {
+for (var i = 1; i <= 10000; i++) {
 
   let objA = {
     id: i,

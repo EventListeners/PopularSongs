@@ -32,9 +32,6 @@ const Artist = sequelize.define('artist', {
   name: {
     type: Sequelize.STRING
   },
-  albumID: {
-    type: Sequelize.INTEGER
-  }
 });
 
 const Album = sequelize.define('album', {
@@ -47,15 +44,12 @@ const Album = sequelize.define('album', {
   publish: {
     type: Sequelize.INTEGER
   },
-  songID: {
+  artistID: {
     type: Sequelize.INTEGER
   }
 });
 
 const Song = sequelize.define('song', {
-  songID: {
-    type: Sequelize.INTEGER
-  },
   name: {
     type: Sequelize.STRING
   },
@@ -70,15 +64,12 @@ const Song = sequelize.define('song', {
   },
   library: {
     type: Sequelize.BOOLEAN
+  },
+  AlbumID: {
+    type: Sequelize.INTEGER
   }
 }); 
 
-Artist.hasMany(Album, {foreignKey: 'albumID', sourceKey: 'isoCode'});
-Album.belongsTo(Artist, {foreignKey: 'id', targetKey: 'isoCode'});
-
-
-Album.hasMany(song, {foreignKey: 'songID', sourceKey: 'isoCode'});
-Song.belongsTo(Album, {foreignKey: 'albumID', sourceKey: 'isoCode'});
 
 // force: true will drop the table if it already exists
 User.sync({force: true}).then(() => {

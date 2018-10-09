@@ -6,6 +6,7 @@ npm
 npm-debug.log
 node_modules/
 fakeData/
+newrelic.js
 
 
 pids

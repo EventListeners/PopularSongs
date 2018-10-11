@@ -1,12 +1,12 @@
 require('newrelic');
 const express = require('express');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const clients = require('../database/index');
-// const path = require('path');
-// const cors = require('cors');
+const path = require('path');
+const cors = require('cors');
 const cluster = require('cluster');
 const os = require('os');
-const cache = require('../cashe');
+// const cache = require('../cashe');
 const compression = require('compression')
 const { Pool } = require('pg');
 
@@ -21,12 +21,13 @@ if (cluster.isMaster) {
   const app = express();
   
   // // parse application/x-www-form-urlencoded
-  // app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.urlencoded({ extended: false }));
   // // parse application/json
-  // app.use( bodyParser.json() );
-  // app.use(cors());
-  // app.use(compression())
-  // app.use(express.static(path.join(__dirname, '../public/')));
+  app.use( bodyParser.json() );
+  app.use(cors());
+  app.use(compression())
+  app.use(express.static(path.join(__dirname, '../public/')));
+
   const pool = new Pool()
 
   pool.on('error', (err, client) => {
@@ -40,24 +41,25 @@ if (cluster.isMaster) {
   app.get('/artist/:id', function (req, res) {
     let artistID = req.params.id;
     
-    cache.get(artistID, (err, info) => {
-      if(info === null) {
+    // cache.get(artistID, (err, info) => {
+    //   if(info === null) {
         pool.connect()
         .then(client => {
           return clients.query(`SELECT * FROM artists, albums, songs WHERE
           artists.id = albums.artist AND songs.album = albums.id AND artists.id = ${artistID};`)
           .then(artist => {
             client.release()
-            cache.set(artistID, JSON.stringify(artist.rows))
+            // cache.set(artistID, JSON.stringify(artist.rows))
             res.send(artist.rows)
           });
         })
-      } else {
-        res.send(JSON.parse(info));
-      }
-    })
-      // .catch(err => console.log(err));
-  });
+      })
+      // else {
+  //       res.send(JSON.parse(info));
+  //     }
+  //   })
+  //     // .catch(err => console.log(err));
+  // });
   
   
   // // expect to receive {artistID, albumID, songID, added -> bool either 1 or 0}
@@ -80,7 +82,7 @@ if (cluster.isMaster) {
   // })
   
   
-  const PORT = 8888;
+  const PORT = 3003;
   
   app.listen(PORT, function() {
     console.log(`listening on port ${PORT}!`);

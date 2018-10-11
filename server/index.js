@@ -1,13 +1,12 @@
 require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
-const clients = require('../database/index');
+// const clients = require('../database/index');
 const path = require('path');
 const cors = require('cors');
 const cluster = require('cluster');
 const os = require('os');
 // const cache = require('../cashe');
-const compression = require('compression')
 const { Pool } = require('pg');
 
 
@@ -25,18 +24,22 @@ if (cluster.isMaster) {
   // // parse application/json
   app.use( bodyParser.json() );
   app.use(cors());
-  app.use(compression())
   app.use(express.static(path.join(__dirname, '../public/')));
 
-  const pool = new Pool()
+  const pool = new Pool({
+    host: "13.56.79.37", 
+    user: "super_user",
+    password: "password",
+    database: "artists",
+    port: "5432",
+  })
 
-  pool.on('error', (err, client) => {
-    console.error('Unexpected error on idle client', err)
-    process.exit(-1)
+  
+  pool.on('error', (err) => {
+    console.error('An idle client has experienced an error', err.stack)
   })
   
-  
-  
+
   
   app.get('/artist/:id', function (req, res) {
     let artistID = req.params.id;
@@ -45,13 +48,17 @@ if (cluster.isMaster) {
     //   if(info === null) {
         pool.connect()
         .then(client => {
-          return clients.query(`SELECT * FROM artists, albums, songs WHERE
+          return client.query(`SELECT * FROM artists, albums, songs WHERE
           artists.id = albums.artist AND songs.album = albums.id AND artists.id = ${artistID};`)
           .then(artist => {
             client.release()
             // cache.set(artistID, JSON.stringify(artist.rows))
             res.send(artist.rows)
-          });
+          })
+          .catch(e => {
+            client.release()
+            console.log('ERROR', e)
+          })
         })
       })
       // else {
@@ -82,7 +89,7 @@ if (cluster.isMaster) {
   // })
   
   
-  const PORT = 3003;
+  const PORT = 8888;
   
   app.listen(PORT, function() {
     console.log(`listening on port ${PORT}!`);

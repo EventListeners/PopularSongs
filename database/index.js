@@ -2,8 +2,9 @@
 const { Client } = require('pg');
 
 const PG_setup = {
-    "host": "localhost",
-    "user": "ivanhui",
+    "host": "localhost", //13.56.79.37 13.56.79.37
+    "password": "password", //
+    "user": "ivanhui", //super_user
     "db": "artists",
     "port": "5432",
   };
@@ -14,7 +15,13 @@ const client = new Client({
   connectionString: conString,
   })
 
-client.connect();
-console.log('working connect');
+client.connect((err) => {
+  console.log('something')
+  if (err) {
+    console.error('connection error', err.stack)
+  } else {
+    console.log('connected')
+  }
+})
 
 module.exports = client;
